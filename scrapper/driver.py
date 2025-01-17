@@ -12,7 +12,7 @@ from argparser import ARGS
 class DriverInitializer:
     @staticmethod
     def get_driver(file_download_path: str) -> webdriver.Chrome:
-        # see: https://github.com/GoogleChrome/chrome-launcher/blob/main/docs/chrome-flags-for-tools.md
+        # help from: https://github.com/GoogleChrome/chrome-launcher/blob/main/docs/chrome-flags-for-tools.md
         opts = Options()
         opts.add_argument("--disable-client-side-phishing-detection")
         opts.add_argument("--no-first-run")
@@ -25,7 +25,7 @@ class DriverInitializer:
         opts.add_argument("--headless=new") if not ARGS.show_browser else opts.add_argument("window-size=900,1200")
         opts.add_experimental_option("excludeSwitches", ["enable-logging"])
 
-        # see: https://stackoverflow.com/questions/43470535/python-download-pdf-embedded-in-a-page/43471196#43471196
+        # help from: https://stackoverflow.com/questions/43470535/python-download-pdf-embedded-in-a-page/43471196#43471196
         profile = {
             "plugins.plugins_list": [{"enabled": False, "name": "Chrome PDF Viewer"}],
             "download.default_directory": file_download_path,
