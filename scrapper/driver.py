@@ -22,7 +22,7 @@ class DriverInitializer:
         opts.add_argument("--disable-gpu")
         opts.add_argument("--silent")
         opts.add_argument("--disable-logging")
-        opts.add_argument("--headless=new") if not ARGS.show_browser else opts.add_argument("window-size=900,1200")
+        opts.add_argument("--headless=new") if not "" else opts.add_argument("window-size=900,1200")
         opts.add_experimental_option("excludeSwitches", ["enable-logging"])
 
         # help from: https://stackoverflow.com/questions/43470535/python-download-pdf-embedded-in-a-page/43471196#43471196
